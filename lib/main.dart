@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'pages/sideBarTextIcon.dart';
-//import 'package:fl_chart/fl_chart.dart'as barchart;
+//import 'package:fl_chart/fl_chart.dart';
 void main(){
   runApp(
   const   MaterialApp(
@@ -71,6 +71,7 @@ void main(){
                ],
              ),
            ),
+
            Container(
              decoration: BoxDecoration(
                color: Colors.black12,
@@ -124,7 +125,7 @@ void main(){
                      ),
                    ],
                  ),
-                   Row(
+                     Row(
                    children: [
                     Padding(
                       padding: const EdgeInsets.all(8.0),
@@ -501,7 +502,7 @@ void main(){
                      ),
                    ],
                  ),
-                    Row(
+                     Row(
                    crossAxisAlignment: CrossAxisAlignment.start,
                    children: [
                      Padding(
@@ -747,8 +748,73 @@ void main(){
                                  color: Colors.white,
                                  borderRadius: BorderRadius.circular(10.0),// Adjust the radius as needed
                                 ),
-                               //child:BarChart(buildBarChartData()),
+
+                            /*   child:BarChart(
+                                   BarChartData(
+                                     barGroups:[
+                                       BarChartGroupData(
+                                         x: 0,
+                                      barRods:[
+                                        BarChartRodData(toY: 10,),
+                                        BarChartRodData(toY: 10,),
+                                      ],
+                                      ),
+                                       BarChartGroupData(
+                                         x: 0,
+                                         barRods:[
+                                           BarChartRodData(toY: 14,),
+                                         ],
+                                       ),
+                                       BarChartGroupData(
+                                         x: 0,
+                                         barRods:[
+                                           BarChartRodData(toY: 14,),
+                                         ],
+                                       ),
+                                     ],
+                                     alignment:BarChartAlignment.spaceBetween,
+                                     groupsSpace:80,
+                                     titlesData:const FlTitlesData(
+                                       //show:true,
+                                       axisNameWidget:Text('adata what is'),
+                                       axisNameSize:10,
+                                       drawBelowEverything:false,
+                                       leftTitles: AxisTitles(
+                                         sideTitles: SideTitles(
+                                           reservedSize:44,
+                                           showTitles:true,
+
+
+                                         ),
+                                       ),
+                                       getTitlesWidget:(double value,TitleMeta meta){
+                                         return Text(
+                                             meta.formattedValue,
+                                           style: TextStyle(),
+                                         );
+                                       },
+                                     ),
+                                   ),
+                                ),*/                              
                              ),
+                           ),
+                           const Padding(
+                             padding: EdgeInsets.all(20.0),
+                             child:Row(
+                               mainAxisAlignment: MainAxisAlignment.start,
+                               //crossAxisAlignment: CrossAxisAlignment.end,
+                                children: [
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.0,8.0,500.0,8.0,),
+                                    child: Text('Expenses Break down',style:TextStyle()),
+                                  ),
+
+                                  Padding(
+                                    padding: EdgeInsets.fromLTRB(8.0,8.0,8.0,8.0),
+                                    child: Text('Compare to last Month'),
+                                  ),
+                                ],
+                             )
                            ),
                            Padding(
                              padding: const EdgeInsets.all(8.0),
