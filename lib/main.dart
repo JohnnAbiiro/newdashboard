@@ -282,6 +282,8 @@ void main(){
                             ),
                             const Divider(height: 10.0,thickness: 2,indent: 30.0,endIndent:30.0 ,color: Colors.black12,),
                             Row(
+                              //crossAxisAlignment: CrossAxisAlignment.center,
+                              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                               children: [
                                 const Column(
                                   children: [
@@ -301,7 +303,6 @@ void main(){
                                       padding: EdgeInsets.fromLTRB(30.0,0.0,0.0,0.0,),
                                       child: Text('\$240,399',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                                     ),
-
                                     Row(
                                       children: [
                                         Padding(
@@ -316,15 +317,16 @@ void main(){
                                     ),
                                     Padding(
                                       padding: EdgeInsets.fromLTRB(30.0,0.0,0.0,0.0,),
-                                      child: Text('\$240,399',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                                      child: Text('\$240,699',style: TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                                     ),
-
                                   ],
                                 ),
-                                Container(
-                                  height: 100,
-                                 width: 300,
-                                 color: Colors.green,
+                                Center(
+                                  child: Container(
+                                    height: 100,
+                                   width: 300,
+                                   color: Colors.black12,
+                                  ),
                                 ),
                               ],
                             ),
@@ -394,7 +396,7 @@ void main(){
                                     ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                    child: const Text('\$150',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                                    child: const Center(child: Text('\$150',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
                                   ),
                                 ),
                               ],
@@ -450,7 +452,7 @@ void main(){
                                     ),
                                     borderRadius: BorderRadius.circular(10.0),
                                   ),
-                                    child: const Text('\$ 559',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                                    child: const Center(child: Text('\$559',style:TextStyle(fontSize: 20,fontWeight: FontWeight.bold),)),
                                   ),
                                 ),
                               ],
@@ -461,7 +463,6 @@ void main(){
                         ),
                       ),
                     ),
-
                    ],
                  ),
                      Row(
@@ -805,12 +806,11 @@ void main(){
                                //crossAxisAlignment: CrossAxisAlignment.end,
                                 children: [
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(8.0,8.0,500.0,8.0,),
-                                    child: Text('Expenses Break down',style:TextStyle()),
+                                    padding: EdgeInsets.fromLTRB(8.0,0.0,500.0,0.0,),
+                                    child: Text('Expenses Break down',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
                                   ),
-
                                   Padding(
-                                    padding: EdgeInsets.fromLTRB(8.0,8.0,8.0,8.0),
+                                    padding: EdgeInsets.fromLTRB(8.0,0.0,8.0,0.0),
                                     child: Text('Compare to last Month'),
                                   ),
                                 ],
