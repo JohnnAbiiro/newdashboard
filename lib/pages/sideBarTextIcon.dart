@@ -25,7 +25,11 @@ class sideBarTextIcon extends StatelessWidget {
     return Container(
       height: height,
       width: width,
-      color: colors,
+      decoration: BoxDecoration(
+        color: colors,
+        borderRadius: BorderRadius.circular(4.0),
+      ),
+
       child:  Row(
         children: [
           Padding(

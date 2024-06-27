@@ -30,9 +30,25 @@ void main(){
                //mainAxisAlignment: MainAxisAlignment.start,
                children: [
                  Padding(
-                   padding:  const EdgeInsets.fromLTRB(20.0,8.0,20.0,8.0),
-                   child: sideBarTextIcon( height: 30,width: 200,colors:Colors.redAccent,iconData: Icons.home,
-                     text: 'Overview',fontSize: 18.0,textColor:Colors.white ,color:Colors.white ,),
+                   padding: const EdgeInsets.fromLTRB(20.0,20.0,20.0,20.0),
+                   child:Container(
+                     height:40,
+                     width:200,
+                     decoration: BoxDecoration(
+                       color: Colors.redAccent,
+                       borderRadius: BorderRadius.circular(4.0),
+                     ),
+                     child:  const Row(
+                       children: [
+                         Padding(
+                           padding: EdgeInsets.fromLTRB(8.0,0.0,10.0,0.0),
+                           child: Icon(
+                             Icons.home,
+                             color:Colors.white,
+                           ),
+                         ),
+                         Text( "Overview",style: TextStyle( fontSize: 18,color: Colors.white,),),],),
+                   ),
                  ),
                  Padding(
                    padding: const EdgeInsets.all(8.0),
@@ -59,19 +75,31 @@ void main(){
                    child: sideBarTextIcon( height: 60,width: 200,colors:Colors.transparent,iconData: Icons.golf_course,
                      text: 'Goals',fontSize: 18.0,textColor:Colors.white ,color:Colors.white ,),
                  ),
-
                  const SizedBox(height: 300,),
                  Padding(
                    padding: const EdgeInsets.fromLTRB(20.0,20.0,20.0,20.0),
-                   child: sideBarTextIcon( height: 30,width: 200,colors:Colors.redAccent,iconData: Icons.logout,
-                     text: 'Logout',fontSize: 18.0,textColor:Colors.white ,color:Colors.white ,),
-                 ),
-
-
+                   child:Container(
+                     height:40,
+                     width:200,
+                     decoration: BoxDecoration(
+                       color: Colors.redAccent,
+                       borderRadius: BorderRadius.circular(4.0),
+                      ),
+                       child:  const Row(
+                         children: [
+                          Padding(
+                            padding: EdgeInsets.fromLTRB(8.0,0.0,10.0,0.0),
+                            child: Icon(
+                             Icons.logout,
+                             color:Colors.white,
+                         ),
+                          ),
+                           Text( "Logout",style: TextStyle( fontSize: 18,color: Colors.white,),),],), 
+                        ),
+                   ),
                ],
              ),
            ),
-
            Container(
              decoration: BoxDecoration(
                color: Colors.black12,
@@ -807,11 +835,11 @@ void main(){
                                 children: [
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(8.0,0.0,500.0,0.0,),
-                                    child: Text('Expenses Break down',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold),),
+                                    child: Text('Expenses Break down',style:TextStyle(fontSize: 24,fontWeight: FontWeight.bold,color:Colors.black12),),
                                   ),
                                   Padding(
                                     padding: EdgeInsets.fromLTRB(8.0,0.0,8.0,0.0),
-                                    child: Text('Compare to last Month'),
+                                    child: Text('Compare to last Month',style: TextStyle(color: Colors.black26),),
                                   ),
                                 ],
                              )
