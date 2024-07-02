@@ -1,5 +1,3 @@
-import 'dart:ui';
-
 import 'package:flutter/material.dart';
 import 'pages/sideBarTextIcon.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -254,14 +252,14 @@ void main(){
                               ),
                             ),
                             const Padding(
-                              padding: EdgeInsets.all(8.0),
+                              padding: EdgeInsets.all(4.0),
                               child: Row(
                                 mainAxisAlignment: MainAxisAlignment.spaceBetween,
                                 children: [
                                   Row(
                                    children: [
                                      Padding(
-                                       padding: EdgeInsets.fromLTRB(20.0,10.0,0.0,10.0),
+                                       padding: EdgeInsets.fromLTRB(20.0,5.0,0.0,5.0),
                                        child: Icon( Icons.skip_previous,color: Colors.black12,),
                                      ),
                                      Text( 'Previous',style: TextStyle(fontSize: 18,color: Colors.black12),),
@@ -364,7 +362,7 @@ void main(){
                                           RadialAxis(
                                               minimum: 0,
                                               maximum: 40,
-                                            interval: 9,
+                                            interval: 10,
                                             labelsPosition: ElementsPosition.inside,
                                             ranges: <GaugeRange>[
                                               GaugeRange(
@@ -394,7 +392,7 @@ void main(){
                                               GaugeAnnotation(
                                                   widget: Text(
                                                     '22.5', style : TextStyle(
-                                                    fontSize: 25,
+                                                    fontSize: 14,
                                                     fontWeight: FontWeight.bold,
                                                    ),
                                                   ),
@@ -428,7 +426,7 @@ void main(){
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(10.0,50.0,0.0,0.0,),
-                                  child: Container( width: 40, height: 60,decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0),color: Colors.black12),
+                                  child: Container( width: 40, height: 70,decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0),color: Colors.black12),
                                      child: const Column(
                                       children: [
                                        Padding(
@@ -484,7 +482,7 @@ void main(){
                               children: [
                                 Padding(
                                   padding: const EdgeInsets.fromLTRB(10.0,50.0,0.0,0.0,),
-                                  child: Container( width: 40, height: 60,decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0),color: Colors.black12),
+                                  child: Container( width: 40, height: 70,decoration: BoxDecoration(borderRadius: BorderRadius.circular(5.0),color: Colors.black12),
                                      child: const Column(
                                       children: [
                                        Padding(
