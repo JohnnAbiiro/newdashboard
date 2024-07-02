@@ -1,3 +1,5 @@
+import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'pages/sideBarTextIcon.dart';
 import 'package:fl_chart/fl_chart.dart';
@@ -354,10 +356,54 @@ void main(){
                                   child: Container(
                                     height: 100,
                                    width: 300,
-                                   color: Colors.black12,
+                                   color: Colors.white,
                                     child:SfRadialGauge(
+                                      enableLoadingAnimation: true,
+                                        animationDuration: 2000,
                                         axes: <RadialAxis>[
-                                          RadialAxis(minimum: 0, maximum: 150)]
+                                          RadialAxis(
+                                              minimum: 0,
+                                              maximum: 40,
+                                            interval: 9,
+                                            labelsPosition: ElementsPosition.inside,
+                                            ranges: <GaugeRange>[
+                                              GaugeRange(
+                                               startValue:0.0,
+                                                endValue: 18.4,
+                                                color: Colors.amber,
+                                              ),
+                                              GaugeRange(
+                                                startValue:18.5,
+                                                endValue: 24.9,
+                                                color: Colors.green,
+                                              ),
+                                              GaugeRange(
+                                                startValue:25.0,
+                                                endValue: 40.0,
+                                                color: Colors.red,
+                                              ),
+                                            ],
+                                            pointers: const<GaugePointer>[
+                                            NeedlePointer(
+                                              value: 22.5,
+                                              needleEndWidth: 5,
+                                             enableAnimation: true,
+                                             ),
+                                            ],
+                                            annotations: const<GaugeAnnotation>[
+                                              GaugeAnnotation(
+                                                  widget: Text(
+                                                    '22.5', style : TextStyle(
+                                                    fontSize: 25,
+                                                    fontWeight: FontWeight.bold,
+                                                   ),
+                                                  ),
+                                                angle: 90.0,
+                                                positionFactor: 0.5,
+                                              ),
+                                            ],
+                                          ),
+                                       ],
                                     ),
                                   ),
                                 ),
@@ -783,7 +829,6 @@ void main(){
                                  color: Colors.white,
                                  borderRadius: BorderRadius.circular(10.0),// Adjust the radius as needed
                                 ),
-
                                  child: BarChart(
                                    BarChartData(
                                      barGroups: [
@@ -821,7 +866,7 @@ void main(){
                                          axisNameSize: 20,
                                          drawBelowEverything: false,
                                          sideTitles: SideTitles(
-                                           reservedSize:44,
+                                           //reservedSize:40,
                                            showTitles:true,
                                            getTitlesWidget: (double value, TitleMeta meta ){
                                              return Text (meta.formattedValue, style: const TextStyle(
@@ -829,7 +874,7 @@ void main(){
                                                fontWeight: FontWeight.bold,
                                              ),);
                                            },
-                                           interval: 4.0,
+                                          // interval: 4.0,
 
 
                                          ),
@@ -866,8 +911,7 @@ void main(){
                                      ),
                                    ),
                                  ),
-                               ),
-
+                                  ),
                                 ),
                               ),
                             const Padding(
