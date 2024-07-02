@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'pages/sideBarTextIcon.dart';
-//import 'package:fl_chart/fl_chart.dart';
+import 'package:fl_chart/fl_chart.dart';
+import 'package:syncfusion_flutter_gauges/gauges.dart';
 void main(){
   runApp(
   const   MaterialApp(
@@ -354,6 +355,10 @@ void main(){
                                     height: 100,
                                    width: 300,
                                    color: Colors.black12,
+                                    child:SfRadialGauge(
+                                        axes: <RadialAxis>[
+                                          RadialAxis(minimum: 0, maximum: 150)]
+                                    ),
                                   ),
                                 ),
                               ],
@@ -764,13 +769,14 @@ void main(){
                          ),
                        ),
                      ),
+
                      Padding(
                        padding: const EdgeInsets.all(8.0),
                        child: Column(
                          children: [
                            Padding(
-                             padding: const EdgeInsets.all(8.0),
-                             child: Container(
+                              padding: const EdgeInsets.all(8.0),
+                               child: Container(
                                height: 260,
                                width: 1000,
                                decoration: BoxDecoration(
@@ -778,56 +784,93 @@ void main(){
                                  borderRadius: BorderRadius.circular(10.0),// Adjust the radius as needed
                                 ),
 
-                            /*   child:BarChart(
+                                 child: BarChart(
                                    BarChartData(
-                                     barGroups:[
-                                       BarChartGroupData(
-                                         x: 0,
-                                      barRods:[
-                                        BarChartRodData(toY: 10,),
-                                        BarChartRodData(toY: 10,),
-                                      ],
-                                      ),
-                                       BarChartGroupData(
-                                         x: 0,
-                                         barRods:[
-                                           BarChartRodData(toY: 14,),
+                                     barGroups: [
+                                       BarChartGroupData(x: 2,
+                                         barRods: [
+                                           BarChartRodData(toY: 40,),
+                                           BarChartRodData(toY: 40,),
                                          ],
                                        ),
-                                       BarChartGroupData(
-                                         x: 0,
-                                         barRods:[
-                                           BarChartRodData(toY: 14,),
+                                       BarChartGroupData(x: 4,
+                                         barRods: [
+                                           BarChartRodData(toY: 30,),
+                                           BarChartRodData(toY: 30,),
                                          ],
                                        ),
+                                       BarChartGroupData(x: 6,
+                                         barRods: [
+                                           BarChartRodData(toY: 20,),
+                                           BarChartRodData(toY: 20,),
+                                         ],
+                                       ),
+                                       BarChartGroupData(x: 8,
+                                         barRods: [
+                                           BarChartRodData(toY: 10,),
+                                           BarChartRodData(toY: 10,),
+                                         ],
+                                       ),
+
                                      ],
-                                     alignment:BarChartAlignment.spaceBetween,
-                                     groupsSpace:80,
-                                     titlesData:const FlTitlesData(
-                                       //show:true,
-                                       axisNameWidget:Text('adata what is'),
-                                       axisNameSize:10,
-                                       drawBelowEverything:false,
-                                       leftTitles: AxisTitles(
+                                     alignment: BarChartAlignment.spaceAround,
+                                     groupsSpace: 20,
+                                     titlesData:  FlTitlesData(
+                                       leftTitles:  AxisTitles(
+                                         axisNameWidget: const Text('Data on left'),
+                                         axisNameSize: 20,
+                                         drawBelowEverything: false,
                                          sideTitles: SideTitles(
                                            reservedSize:44,
                                            showTitles:true,
+                                           getTitlesWidget: (double value, TitleMeta meta ){
+                                             return Text (meta.formattedValue, style: const TextStyle(
+                                               color: Colors.blue,
+                                               fontWeight: FontWeight.bold,
+                                             ),);
+                                           },
+                                           interval: 4.0,
 
 
                                          ),
+
                                        ),
-                                       getTitlesWidget:(double value,TitleMeta meta){
-                                         return Text(
-                                             meta.formattedValue,
-                                           style: TextStyle(),
-                                         );
+                                     ),
+                                     rangeAnnotations: RangeAnnotations(
+                                       horizontalRangeAnnotations: [
+                                         HorizontalRangeAnnotation(
+                                           y1:4.0,
+                                           y2:8.0,
+                                           color:Colors.red.withOpacity(0.5),
+
+                                         ),
+                                       ],
+                                     ),
+                                     //backgroundColor: Colors.purple.withOpacity(0.15),
+                                     barTouchData: BarTouchData(
+                                       //enabled: false,
+                                       mouseCursorResolver: ( FlTouchEvent event, BarTouchResponse? response){
+                                         if(response == null || response.spot == null){
+                                           return SystemMouseCursors.grab;
+                                         }
+                                         return SystemMouseCursors.click;
+
                                        },
+                                       touchTooltipData: BarTouchTooltipData(
+                                       tooltipRoundedRadius: 3.0,
+                                       tooltipMargin: 5.0,
+                                       tooltipHorizontalAlignment: FLHorizontalAlignment.center,
+                                       maxContentWidth: 400,
+                                       fitInsideHorizontally: true,
+                                       fitInsideVertically: true,
                                      ),
                                    ),
-                                ),*/                              
-                             ),
-                           ),
-                           const Padding(
+                                 ),
+                               ),
+
+                                ),
+                              ),
+                            const Padding(
                              padding: EdgeInsets.all(20.0),
                              child:Row(
                                mainAxisAlignment: MainAxisAlignment.start,
