@@ -22,31 +22,33 @@ class sideBarTextIcon extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return Container(
-      height: height,
-      width: width,
-      decoration: BoxDecoration(
-        color: colors,
-        borderRadius: BorderRadius.circular(4.0),
-      ),
-
-      child:  Row(
-        children: [
-          Padding(
-            padding: const EdgeInsets.all(8.0),
-            child: Icon(
-              iconData,
-              color: color,
+    return Expanded(
+      child: Container(
+        height: height,
+        width: width,
+        decoration: BoxDecoration(
+          color: colors,
+          borderRadius: BorderRadius.circular(4.0),
+        ),
+      
+        child:  Row(
+          children: [
+            Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Icon(
+                iconData,
+                color: color,
+              ),
             ),
-          ),
-          Text(
-            text,
-            style: TextStyle(
-              fontSize: fontSize,
-              color: textColor,
+            Text(
+              text,
+              style: TextStyle(
+                fontSize: fontSize,
+                color: textColor,
+              ),
             ),
-          ),
-        ],
+          ],
+        ),
       ),
     );
   }
